@@ -1,0 +1,36 @@
+.property-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.property-images {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.property-info {
+    width: 100%;
+    max-width: 600px;
+}
+
+.price-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.descrip {
+    margin-bottom: 20px;
+}
+
+.agent-contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact-button {
+    margin-right: 10px;
+}

@@ -171,129 +171,28 @@
         </div>
     </div>
 
-    <div class="advertisement">
-        <div class="advertisement-image">
-            <div class="slider">
-                <div class="slide">
-                    <img src="{{ asset('images/example-house.jpg') }}" alt="Недвижимость 1">
+    <div class="properties">
+        @foreach($properties as $property)
+            <div class="advertisement">
+                <div class="advertisement-image">
+                    <img src="{{ asset('images/' . $property->image) }}" alt="Недвижимость">
                 </div>
-                <div class="slide">
-                    <img src="{{ asset('images/example-house2.jpg') }}" alt="Недвижимость 2">
-                </div>
-                <div class="slide">
-                    <img src="{{ asset('images/example-house3.jpg') }}" alt="Недвижимость 3">
-                </div>
-                <button class="slider-button prev">&#10094;</button>
-                <button class="slider-button next">&#10095;</button>
-                <div class="slider-indicators">
-                    <span class="slider-indicator active"></span>
-                    <span class="slider-indicator"></span>
-                    <span class="slider-indicator"></span>
-                </div>
-            </div>
-        </div>
-        <div class="advertisement-details">
-            <h2>25м², студия, 19/21 этаж</h2>
-            <div class="price-details">
-                <div class="agent-price">
-                    7 950 000 ⃀
-                </div>
-                <div class="agent-price-per-meter">
-                    318 000 ⃀/м²
-                </div>
-            </div>
-            <div class="descrip">
-                <p>Москва, Южное Бутово, Южное Бутово, Бартеневская ул., 18, к 2</p>
-                <p>Бунинская аллея</p>
-                <p>Арт. 67512087 Продается студия 25 м2 в новом ЖК "Южные сады" (А101)...</p>
-            </div>
-            <div class="advertisement-agent">
-                <div class="agent-image">
-                    <img src="{{ asset('images/agent4.jpg') }}" alt="Агент">
-                </div>
-                <div class="agent-info">
-                    <div class="agent-name">Романенкова Наталья Викторовна</div>
-                    <div class="agent-description">Агент</div>
-                </div>
-            </div>
-            <div class="agent-price-options">
-                <div class="agent-contact">
-                    <button id="show-phone" class="contact-button">
-                        Показать телефон
-                    </button>
-                    <button id="phone-number" class="contact-button" style="display: none;">
-                        +996 (123) 456-789
-                    </button>
-                    <div class="icons">
-                        <img src="{{ asset('images/telegram.svg') }}" alt="Telegram">
-                        <img src="{{ asset('images/whatsapp.svg') }}" alt="WhatsApp">
+                <div class="advertisement-details">
+                    <h2>{{ $property->area }}м², {{ $property->rooms }} комнат(ы), {{ $property->floor }}/{{ $property->house_floors }} этаж</h2>
+                    <div class="price-details">
+                        <div class="agent-price">{{ number_format($property->price, 0, ',', ' ') }} ⃀</div>
+                        <div class="agent-price-per-meter">{{ number_format($property->price / $property->area, 0, ',', ' ') }} ⃀/м²</div>
+                    </div>
+                    <div class="descrip">
+                        <p>{{ $property->city }}, {{ $property->address }}</p>
+                        <p>{{ $property->description }}</p>
+                    </div>
+                    <div class="agent-price-options">
+                        <a href="{{ route('property.show', $property->id) }}" class="details-button">Подробнее</a>
                     </div>
                 </div>
-                <button>Подробнее</button>
             </div>
-        </div>
-    </div>
-    <div class="advertisement">
-        <div class="advertisement-image">
-            <div class="slider">
-                <div class="slide">
-                    <img src="{{ asset('images/example-house.jpg') }}" alt="Недвижимость 1">
-                </div>
-                <div class="slide">
-                    <img src="{{ asset('images/example-house2.jpg') }}" alt="Недвижимость 2">
-                </div>
-                <div class="slide">
-                    <img src="{{ asset('images/example-house3.jpg') }}" alt="Недвижимость 3">
-                </div>
-                <button class="slider-button prev">&#10094;</button>
-                <button class="slider-button next">&#10095;</button>
-                <div class="slider-indicators">
-                    <span class="slider-indicator active"></span>
-                    <span class="slider-indicator"></span>
-                    <span class="slider-indicator"></span>
-                </div>
-            </div>
-        </div>
-        <div class="advertisement-details">
-            <h2>25м², студия, 19/21 этаж</h2>
-            <div class="price-details">
-                <div class="agent-price">
-                    7 950 000 ⃀
-                </div>
-                <div class="agent-price-per-meter">
-                    318 000 ⃀/м²
-                </div>
-            </div>
-            <div class="descrip">
-                <p>Москва, Южное Бутово, Южное Бутово, Бартеневская ул., 18, к 2</p>
-                <p>Бунинская аллея</p>
-                <p>Арт. 67512087 Продается студия 25 м2 в новом ЖК "Южные сады" (А101)...</p>
-            </div>
-            <div class="advertisement-agent">
-                <div class="agent-image">
-                    <img src="{{ asset('images/agent4.jpg') }}" alt="Агент">
-                </div>
-                <div class="agent-info">
-                    <div class="agent-name">Романенкова Наталья Викторовна</div>
-                    <div class="agent-description">Агент</div>
-                </div>
-            </div>
-            <div class="agent-price-options">
-                <div class="agent-contact">
-                    <button id="show-phone" class="contact-button">
-                        Показать телефон
-                    </button>
-                    <button id="phone-number" class="contact-button" style="display: none;">
-                        +996 (123) 456-789
-                    </button>
-                    <div class="icons">
-                        <img src="{{ asset('images/telegram.svg') }}" alt="Telegram">
-                        <img src="{{ asset('images/whatsapp.svg') }}" alt="WhatsApp">
-                    </div>
-                </div>
-                <button>Подробнее</button>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <script src="{{ asset('js/catalog.js') }}"></script>

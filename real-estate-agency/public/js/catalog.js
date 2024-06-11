@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const sliders = document.querySelectorAll(".slider");
 
     sliders.forEach((slider, index) => {
@@ -94,5 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
             input.value = input.tagName === "SELECT" ? "any" : "";
         });
         filterCountSpan.textContent = "(0)";
+    });
+
+    const filterForm = document.querySelector('.filter-container form');
+    const filterButton = document.querySelector('.filter-container button.search-button');
+    const resetFormButton = document.querySelector('#reset-filters');
+
+    filterButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        filterForm.submit();
+    });
+
+    resetFormButton.addEventListener('click', function() {
+        filterForm.reset();
     });
 });
