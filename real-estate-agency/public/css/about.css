@@ -1,0 +1,109 @@
+
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(to right, #5ebc67, #152232);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 18px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-mission, .about-vision, .about-team {
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.about-mission{
+    background: #152232;
+}
+.about-vision{
+    background: #152232;
+}
+.about-team{
+    background: #152232
+}
+.about-mission::before, .about-vision::before, .about-team::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.about-mission h2, .about-vision h2, .about-team h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.about-mission p, .about-vision p {
+    color:white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-team .team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-team .team-member {
+    text-align: center;
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-team .team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-team .team-member:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-team .team-member h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.about-team .team-member p {
+    color: #5ebc67;
+    font-size: 14px;
+}
+
